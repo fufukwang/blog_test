@@ -1,0 +1,3 @@
+[submodule "public/fire"]
+	path = public/fire
+	url = git@github.com:fufukwang/chat_firebase.git
