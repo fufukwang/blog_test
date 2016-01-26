@@ -12,11 +12,15 @@
 */
 
 
-Route::get('/', 'BlogController@index');
+Route::get('/', 'BlogController@index'); /*/代表根目錄 通常是首頁*/
 Route::get('blog/{slug}', 'BlogController@showPost');
-
 Route::get('post', 'BlogController@addPost');
 Route::get('blog/{slug}/edit', 'BlogController@editPost');
 Route::put('post/{id}', 'BlogController@update');
 Route::post('post', 'BlogController@store');
 Route::delete('blog/{id}', 'BlogController@deletePost');
+
+//game list
+Route::get('/game','GameController@index');
+Route::get('/game/create','GameController@create');
+Route::post('/game/store','GameController@store');

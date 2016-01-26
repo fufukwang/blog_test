@@ -21,7 +21,7 @@ class BlogController extends Controller
 
     public function showPost($slug)
     {
-        $post = Post::whereSlug($slug)->firstOrFail();
+        $post = Post::whereSlug($slug)->firstOrFail(); //slug 是一個欄位 where 是查詢方法
 
         return view('blog.post')->withPost($post);
     }

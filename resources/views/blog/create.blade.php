@@ -8,7 +8,7 @@
 <body>
 <div class="row" style="margin:10px auto;width:960px;">
     <h1>{{ $title }}</h1>
-    {!! Form::open(['url'=>'/post','method'=>'post']) !!}
+{!! Form::open(['url'=>'/game/store','method'=>'post']) !!}
 <div class="form-group">
     {{ Form::label('標題', null, ['class' => 'control-label']) }}
     {{ Form::text('title', '', array_merge(['class' => 'form-control'])) }}
