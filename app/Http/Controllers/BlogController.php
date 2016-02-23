@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use MC;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -16,6 +17,12 @@ class BlogController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(config('blog.posts_per_page'));
 
+
+
+// Get 10 lists starting from offset 10 and include only a specific set of fields
+$result = MC::mc_subscribe('test@test.com', "testname", 1, '2c3c8891aeb059ce63dce0551d7df038-us1', '52a6fb01b6', 'us1.');
+
+dd($result);
         return view('blog.index', compact('posts'));
     }
 
