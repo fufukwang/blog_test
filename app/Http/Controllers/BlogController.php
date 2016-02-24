@@ -16,11 +16,23 @@ class BlogController extends Controller
         $posts = Post::where('published_at', '<=', Carbon::now())
             ->orderBy('published_at', 'desc')
             ->paginate(config('blog.posts_per_page'));
+            $data = array(
+                'email_address' => 'test2@test.com',
+                'status'        => 'subscribed',
+                'merge_fields'  => array(
+                    'FNAME' => 'my name'
+                    )
+                );
+            
 
 
 
-// Get 10 lists starting from offset 10 and include only a specific set of fields
-$result = MC::mc_subscribe('test@test.com', "testname", 1, '2c3c8891aeb059ce63dce0551d7df038-us1', '52a6fb01b6', 'us1.');
+            $rr = MC::subscribe('52a6fb01b6',$data);
+            dd($rr);
+            $data = array(
+                'email_address' => 'test@test.com'
+            );
+            $result = MC::checksub('52a6fb01b6',$data);
 
 dd($result);
         return view('blog.index', compact('posts'));

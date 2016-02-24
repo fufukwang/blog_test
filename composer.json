@@ -9,7 +9,7 @@
         "laravel/framework": "5.2.*",
         "illuminate/html": "^5.0",
         "laravelcollective/html": "5.2.*",
-        "pacely/mailchimp-apiv3": "dev-master"
+        "fufukwang/mailchimp_apiv3": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
