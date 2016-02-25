@@ -16,6 +16,9 @@ class BlogController extends Controller
         $posts = Post::where('published_at', '<=', Carbon::now())
             ->orderBy('published_at', 'desc')
             ->paginate(config('blog.posts_per_page'));
+            /*
+
+            //  add user
             $data = array(
                 'email_address' => 'test2@test.com',
                 'status'        => 'subscribed',
@@ -24,17 +27,20 @@ class BlogController extends Controller
                     )
                 );
             
+            $rr = MC::subscribe('52a6fb01b6',$data);*/
 
+            /*
 
-
-            $rr = MC::subscribe('52a6fb01b6',$data);
-            dd($rr);
+            // check user
             $data = array(
-                'email_address' => 'test@test.com'
+                'email_address' => 'tddest@test.com'
             );
             $result = MC::checksub('52a6fb01b6',$data);
 
-dd($result);
+            */
+
+            
+
         return view('blog.index', compact('posts'));
     }
 
